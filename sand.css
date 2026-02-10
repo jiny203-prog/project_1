@@ -1,0 +1,128 @@
+ body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #d9d9d9;
+      font-family: Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* 返回按钮 */
+    .back-btn {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      z-index: 90;
+      transition: transform 0.2s ease;
+    }
+    .back-btn:hover {
+      transform: translateX(-5px);
+      color: #ff1100;
+    }
+
+    /* ================= 布局容器 ================= */
+    .artwork-container {
+      position: relative;
+      width: 1000px;
+      height: 600px;
+    }
+
+    /* ================= 1. 红盒子 (书封) ================= */
+    .book-cover {
+      position: absolute;
+      /* 保持你满意的布局位置 */
+      top: 80px;      
+      right: 150px;   
+      
+      width: 420px;   
+      height: 420px;  
+      
+      background-color: #ff1100; 
+      
+      cursor: pointer;
+      box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      z-index: 10;
+    }
+
+    .book-cover:hover {
+      transform: scale(1.01);
+    }
+
+    /* ================= 2. 信息卡片 (P2 风格 - English) ================= */
+    .info-card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #1a1a1a;
+      color: #f0f0f0; 
+      padding: 35px; 
+      box-sizing: border-box;
+      
+      display: flex;
+      flex-direction: column;
+      /* 改为 space-between 让标题在顶，作者在底，或者用 flex-start */
+      justify-content: space-between; 
+      
+      opacity: 0; 
+      transition: opacity 0.4s ease; 
+    }
+
+    .book-cover:hover .info-card {
+      opacity: 1;
+    }
+
+    /* 标题部分 */
+    .info-header h1 {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 3.8rem; /* 英文标题稍微大一点更有冲击力 */
+      line-height: 0.9;
+      margin: 0 0 10px 0;
+      font-weight: bold;
+      letter-spacing: -1px;
+      text-transform: uppercase; /* 大写看起来更像封面 */
+    }
+
+    .info-header .year {
+      font-size: 1.2rem;
+      font-weight: 300;
+      opacity: 0.8;
+      margin-top: 5px;
+      font-family: 'Times New Roman', serif;
+    }
+
+    /* 作者部分 - 放在底部 */
+    .info-author {
+      font-size: 1.4rem;
+      font-weight: 400;
+      opacity: 0.9;
+      border-top: 1px solid rgba(255,255,255,0.3); /* 加一条细线增加设计感 */
+      padding-top: 15px;
+    }
+
+    /* ================= 3. Quote (左侧文字) ================= */
+    .quote-text {
+      position: absolute;
+      bottom: 150px;
+      left: 100px;
+      
+      width: 550px;
+      
+      font-size: 2.2rem;
+      line-height: 1.1;
+      font-weight: 700;
+      color: black;
+      
+      z-index: 20; 
+      pointer-events: none;
+    }
