@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #d9d9d9;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+.back-btn {
+  position: fixed;   
+  
+  top: 30px;         /* 距离顶部 30px */
+  left: 30px;        /* 距离左边 30px */
+  
+  z-index: 100;      /* 保证它浮在最上层 */
+  
+  /* 其他样式 */
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  
+  /* 如果你的图片很大，这里限制一下最大宽度是个好习惯 */
+  max-width: 100px; 
+}
+
+.back-btn:hover {
+  opacity: 0.7; 
+}
+
+/* ================= 内容容器 ================= */
+.content-container {
+  max-width: 700px;
+  margin: 0 auto;
+  
+  /* 【修改点】把 100px 改成了 150px */
+  /* 这样可以给左上角的返回按钮留出更多空间，防止视觉上挤在一起 */
+  padding: 150px 20px 100px 20px; 
+}
+
+/* ================= 标题区域 ================= */
+.article-header {
+  text-align: center;
+  margin-bottom: 60px;
+  border-bottom: 2px solid #ff1100;
+  padding-bottom: 30px;
+}
+
+.article-header h1 {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.article-header .meta {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #555;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.article-header .author {
+  margin-right: 15px;
+}
+
+/* ================= 正文区域 ================= */
+.story-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.story-text p:first-of-type::first-letter {
+  font-size: 3.5rem;
+  float: left;
+  line-height: 0.8;
+  margin-right: 10px;
+  color: #ff1100;
+  font-weight: bold;
+}
+
+/* ================= 底部 ================= */
+.footer-note {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
