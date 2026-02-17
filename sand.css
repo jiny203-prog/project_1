@@ -117,7 +117,7 @@ body {
   padding-top: 15px;
 }
 
-/* ================= 3. 左侧文字 ================= */
+
 .quote-text {
   position: absolute;
   bottom: 150px;
@@ -128,5 +128,23 @@ body {
   font-weight: 700;
   color: black;
   z-index: 20; 
-  pointer-events: none;
+  pointer-events: auto; /* 必须改成 auto 才能点击 */
+  cursor: pointer;      /* 增加鼠标手型 */
+  transition: color 0.3s ease;
+}
+
+.quote-text:hover {
+  color: #ff1100; /* 悬停时变红，暗示可交互 */
+}
+
+/* 新增：提示点击的文字样式 */
+.lang-hint {
+  font-size: 0.8rem;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #888;
+  font-weight: normal;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: opacity 0.3s;
 }

@@ -102,3 +102,58 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+.inline-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed #888;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.inline-link:hover {
+  color: #ff1100;
+  border-bottom: 1px solid #ff1100;
+}
+
+.highlight-quote {
+  color: #ff1100;
+  font-weight: bold;
+}
+
+.scroll-top {
+  text-align: center;
+  margin-top: 60px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.85rem;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-top:hover {
+  color: #ff1100;
+  transform: translateY(-5px);
+}
+
+/* ================= 语言图层动画与切换 ================= */
+.lang-layer {
+  display: none;
+  animation: fadeIn 0.8s ease-in-out; 
+}
+
+.lang-layer.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 临时测试代码：强行拉长网页弄出滚动条，等你粘贴了长正文后可以把这三行删掉 */
+body {
+  min-height: 300vh; 
+}

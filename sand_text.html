@@ -13,8 +13,6 @@
     <img src="image/back_button.svg" alt="Back" style="height: 80px; display: block; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3));">
   </a>
 
-</a>
-
   <div class="content-container">
     <header class="article-header">
       <h1>The Book of Sand</h1>
@@ -24,11 +22,11 @@
       </div>
     </header>
 
-    <article class="story-text">
-      <p>
-
-
-The  Book  of  Sand 
+   <article class="story-text">
+      
+      <div id="layer-en" class="lang-layer active">
+        <p>The line is made up of an infinite number of points...</p>
+        <p>The  Book  of  Sand 
 
 
 Thy  rope  of  sands  .   .    . 
@@ -59,13 +57,63 @@ been  misled  by  his  thin  blond  hair,  which  was,  in  a
 Scandinavian  sort  of  way,  almost  white.  During  the 
 course  of  our  conversation,  which  was  not  to  last 
 an  hour,  I  found  out  that  he  came  from  the  Ork- 
-neys. 
+neys. </p>
+      </div>
 
-      </p>
+      <div id="layer-es" class="lang-layer">
+        <p>La línea consta de un número infinito de puntos...</p>
+        <p>El libro de arena
+
+Tu cuerda de arenas...
+— George Herbert
+
+La línea consta de un número infinito de puntos; el plano, de un número infinito de líneas; el volumen, de un número infinito de planos; el hipervolumen, de un número infinito de volúmenes... No, ciertamente este no es —more geometrico— el mejor modo de empezar mi relato. Afirmar que es verídico es hoy una convención de todo relato fantástico; el mío, sin embargo, es verdadero.
+
+Vivo solo, en un departamento del cuarto piso de la calle Belgrano, en Buenos Aires. Una noche, hace unos meses, oí que llamaban a la puerta. Abrí y entró un desconocido. Era un hombre alto, de rasgos desdibujados —o quizá mi miopía los hacía parecer así—. Vestía de gris y llevaba en la mano una valija gris. Su aspecto era insignificante. Advertí de inmediato que era extranjero. Al principio me pareció viejo; después comprendí que me había engañado su cabello rubio, ralo, casi blanco, a la manera escandinava. En el curso de nuestra conversación, que no duró una hora, supe que venía de las Orcadas.</p>
+      </div>
+
+      <div id="layer-zh" class="lang-layer">
+        <p>线由无限的点组成；面由无限的线组成...</p>
+        <p>《沙之书》
+
+“你那沙之绳索……”
+——乔治·赫伯特
+
+直线由无限个点构成；平面由无限条直线构成；体积由无限个平面构成；超体积由无限个体积构成……不，这显然不是——以几何方式而言——讲述我这个故事的最佳开端。如今，声称故事是真实的，已成为一切虚构作品的惯例。然而，我的故事却是真实的。
+
+我独自住在布宜诺斯艾利斯贝尔格拉诺街一栋公寓的四楼。几个月前的一个夜晚，我听见有人敲门。我开了门，一个陌生人站在门外。他身材高大，五官平淡无奇——或许只是我的近视使他显得如此。他身穿灰色衣服，手提一只灰色手提箱，看上去毫不起眼。我立刻意识到他是个外国人。起初我以为他年纪很大；后来才明白，是他那稀薄的金发误导了我，那头发近乎白色，带着斯堪的纳维亚式的苍白。在我们那场不到一小时的谈话中，我得知他来自奥克尼群岛。</p>
+      </div>
+
     </article>
     
-    <div class="footer-note">End of Text</div>
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+      ↑ BACK TO TOP
+    </div>
   </div>
 
-</body>
+  <script>
+    const layerEn = document.getElementById('layer-en');
+    const layerEs = document.getElementById('layer-es');
+    const layerZh = document.getElementById('layer-zh');
+    const layers = [layerEn, layerEs, layerZh];
+
+    window.addEventListener('scroll', () => {
+      // 注意：因为你目前放进去的文本比较短，我把这里的数字改成了 100。
+      // 意思是“每向下滚动 100 像素切换一次语言”。
+      // 等你把很长很长的全文都放进去之后，你可以把它改回 600 或 800。
+      let step = Math.floor(window.scrollY / 100); 
+      let langIndex = ((step % 3) + 3) % 3; 
+
+      layers.forEach((layer, index) => {
+        if (index === langIndex) {
+          if (!layer.classList.contains('active')) {
+            layer.classList.add('active');
+          }
+        } else {
+          layer.classList.remove('active');
+        }
+      });
+    });
+  </script>
+  </body>
 </html>

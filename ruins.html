@@ -6,44 +6,45 @@
   <title>The Circular Ruins</title>
 
   <link rel="stylesheet" href="ruins.css">
-  
   <link rel="icon" type="image/png" sizes="192x192" href="favicon_io (4)/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon_io (4)/android-chrome-32x32.png">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 </head>
 <body>
-
-  <div id="p5-background"></div>
 
   <a href="index.html" class="back-btn" style="position: fixed; top: 30px; left: 30px; z-index: 999;">
     <img src="image/back_button.svg" alt="Back" style="height: 80px; display: block; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3));">
   </a>
 
   <div class="artwork-container">
-    
-  
     <a href="ruins_text.html" class="book-cover">
       <div class="info-card">
         <div class="info-header">
           <h1>The Circular<br>Ruins</h1>
           <div class="year">1940</div>
         </div>
-
-        <div class="info-author">
-          Jorge Luis Borges
-        </div>
+        <div class="info-author">Jorge Luis Borges</div>
       </div>
     </a>
 
-
-    <div class="quote-text">
-      With relief, with humiliation, with terror, he understood that he too was a mere appearance, dreamt by another.
+    <div class="quote-text" onclick="switchLanguageRuins()">
+      <span id="multilingual-quote-ruins">With relief, with humiliation, with terror, he understood that he also was an illusion, that someone else was dreaming him.</span>
+      <div class="lang-hint">CLICK TO TRANSLATE</div>
     </div>
-
   </div>
 
-  <script src="sketch.js"></script>
+  <script>
+    const quotesRuins = [
+      "With relief, with humiliation, with terror, he understood that he also was an illusion, that someone else was dreaming him.",
+      "Con alivio, con humillación, con terror, comprendió que él también era una apariencia, que otro estaba soñándolo.",
+      "他宽慰地、耻辱地、恐惧地明白，他自己也是一个幻影，另一个人正在梦见他。"
+    ];
+    let currentLangRuins = 0;
+    
+    function switchLanguageRuins() {
+      currentLangRuins = (currentLangRuins + 1) % quotesRuins.length;
+      document.getElementById('multilingual-quote-ruins').innerText = quotesRuins[currentLangRuins];
+    }
+  </script>
 
 </body>
 </html>

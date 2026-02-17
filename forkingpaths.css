@@ -113,3 +113,26 @@ body {
   z-index: 20; 
   pointer-events: none;
 }
+
+/* 中间页：允许引用文字被点击，并增加翻译提示 */
+.quote-text {
+  pointer-events: auto; /* 必须改成 auto 才能被点击 */
+  cursor: pointer; 
+  transition: color 0.3s ease;
+}
+
+.quote-text:hover {
+  color: #ff1100;
+}
+
+.lang-hint {
+  font-size: 0.8rem;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #888;
+  font-weight: normal;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: opacity 0.3s;
+}
+

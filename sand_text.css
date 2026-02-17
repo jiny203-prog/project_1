@@ -80,3 +80,78 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+/* 新增：正文中的迷宫导航链接 */
+.inline-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed #888; /* 虚线暗示它是可以点击的 */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.inline-link:hover {
+  color: #ff1100;
+  border-bottom: 1px solid #ff1100;
+}
+
+.highlight-quote {
+  color: #ff1100;
+  font-weight: bold;
+}
+
+/* 修改：用回到顶部替换原本的 End of Text */
+.scroll-top {
+  text-align: center;
+  margin-top: 60px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.85rem;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-top:hover {
+  color: #ff1100;
+  transform: translateY(-5px); /* 悬停时有个轻微向上的动效 */
+}
+
+/* 隐藏非活跃的语言层 */
+.lang-layer {
+  display: none;
+  animation: fadeIn 0.8s ease-in-out; /* 增加 0.8 秒的淡入效果，像幻觉一样 */
+}
+
+/* 显示活跃的语言层 */
+.lang-layer.active {
+  display: block;
+}
+
+/* 淡入动画关键帧 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.lang-layer {
+  display: none;
+  animation: fadeIn 0.8s ease-in-out; 
+}
+
+/* 显示活跃的语言层 */
+.lang-layer.active {
+  display: block;
+}
+
+/* 淡入动画关键帧 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 临时加长网页，强行弄出滚动条以便测试 */
+body {
+  min-height: 300vh; 
+}

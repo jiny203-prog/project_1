@@ -4,46 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Garden of Forking Paths</title>
-
   <link rel="stylesheet" href="forkingpaths.css">
-  
-<link rel="icon" type="image/png" sizes="192x192" href="favicon_io (4)/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon_io (4)/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon_io (4)/android-chrome-32x32.png">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 </head>
 <body>
-
-  <div id="p5-background"></div>
 
   <a href="index.html" class="back-btn" style="position: fixed; top: 30px; left: 30px; z-index: 999;">
     <img src="image/back_button.svg" alt="Back" style="height: 80px; display: block; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3));">
   </a>
 
   <div class="artwork-container">
-    
-
     <a href="forkingpaths_text.html" class="book-cover">
       <div class="info-card">
         <div class="info-header">
           <h1>The Garden of<br>Forking Paths</h1>
           <div class="year">1941</div>
         </div>
-
-        <div class="info-author">
-          Jorge Luis Borges
-        </div>
+        <div class="info-author">Jorge Luis Borges</div>
       </div>
     </a>
 
-
-    <div class="quote-text">
-      I see myself as a dead person, watching that day coldly, perhaps the passing of the last day and the arrival of night.
+    <div class="quote-text" onclick="switchLanguagePaths()">
+      <span id="multilingual-quote-paths">I thought to myself that a man may be an enemy of other men, but not of a country: not of fireflies, words, gardens, streams of water, zephyrs.</span>
+      <div class="lang-hint">CLICK TO TRANSLATE</div>
     </div>
-
   </div>
 
-  <script src="sketch.js"></script>
+  <script>
+    const quotesPaths = [
+      "I thought to myself that a man may be an enemy of other men, but not of a country: not of fireflies, words, gardens, streams of water, zephyrs.",
+      "Pensé que un hombre puede ser enemigo de otros hombres, pero no de un país: no de luciérnagas, palabras, jardines, cursos de agua, céfiros.",
+      "我想，一个人可以成为别人的敌人，但不能成为一个地区、萤火虫、字句、花园、水流和风的敌人。"
+    ];
+    let currentLangPaths = 0;
+    
+    function switchLanguagePaths() {
+      currentLangPaths = (currentLangPaths + 1) % quotesPaths.length;
+      document.getElementById('multilingual-quote-paths').innerText = quotesPaths[currentLangPaths];
+    }
+  </script>
 
 </body>
 </html>
