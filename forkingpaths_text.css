@@ -123,22 +123,22 @@ body {
   transform: translateY(-5px);
 }
 
-/* ================= 语言图层动画与切换 ================= */
-.lang-layer {
-  display: none;
-  animation: fadeIn 0.8s ease-in-out; 
+.story-text {
+  display: grid;
+  position: relative;
 }
+
+.lang-layer {
+  grid-area: 1 / 1;       
+  opacity: 0;             
+  visibility: hidden;     
+  pointer-events: none; 
+  transition: opacity 0.5s ease-in-out; 
+}
+
 
 .lang-layer.active {
-  display: block;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* 临时测试代码：强行拉长网页弄出滚动条，等你粘贴了长正文后可以把这三行删掉 */
-body {
-  min-height: 300vh; 
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }

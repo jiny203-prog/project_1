@@ -75,14 +75,12 @@ body {
   margin-right: 15px;
 }
 
-/* 正文区域 */
 .story-text p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   text-align: justify;
 }
 
-/* 首字下沉效果 */
 .story-text p:first-of-type::first-letter {
   font-size: 3.5rem;
   float: left;
@@ -92,7 +90,6 @@ body {
   font-weight: bold;
 }
 
-/* 底部注记 */
 .footer-note {
   text-align: center;
   margin-top: 50px;
@@ -138,7 +135,6 @@ body {
   transform: translateY(-5px);
 }
 
-/* ================= 语言图层动画与切换 ================= */
 .lang-layer {
   display: none;
   animation: fadeIn 0.8s ease-in-out; 
@@ -153,7 +149,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* 临时测试代码：强行拉长网页弄出滚动条，等你粘贴了长正文后可以把这三行删掉 */
 body {
   min-height: 300vh; 
 }
