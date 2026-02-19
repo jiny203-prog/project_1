@@ -1,4 +1,3 @@
-/* 严格遵循 sand-text.css 的规范 */
 body {
   margin: 0;
   padding: 0;
@@ -10,7 +9,6 @@ body {
   line-height: 1.6;
 }
 
-/* 返回按钮 - 彻底修复尺寸过小的问题 */
 .back-btn {
   position: fixed;   
   top: 30px;         
@@ -18,20 +16,15 @@ body {
   z-index: 1000;      
   text-decoration: none;
   transition: transform 0.2s, opacity 0.2s;
-  
-  /* 确保容器本身不限制尺寸 */
   display: block;
   width: auto;
   height: auto;
 }
 
 .back-btn img {
-  /* 强制设定高度为 80px，并移除任何限制 */
   height: 80px !important; 
   width: auto !important;
   display: block;
-  
-  /* 添加投影增强在浅色背景下的识别度 */
   filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3));
 }
 
@@ -40,15 +33,12 @@ body {
   transform: scale(1.05);
 }
 
-/* 内容容器 */
 .content-container {
   max-width: 700px;
   margin: 0 auto;
-  /* 增加顶部内边距，确保不会被大的返回按钮遮挡标题 */
   padding: 180px 20px 100px 20px; 
 }
 
-/* 标题区域 */
 .article-header {
   text-align: center;
   margin-bottom: 60px;

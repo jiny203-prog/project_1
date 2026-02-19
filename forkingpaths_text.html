@@ -362,8 +362,6 @@
     const layers = [layerEn, layerEs, layerZh];
 
     window.addEventListener('scroll', () => {
-      // 当前是 100，方便你在文本较短时进行测试。
-      // 等你把非常长的正文粘贴进去后，为了避免切得太频繁，你可以把它改回 800 或 1000。
       let step = Math.floor(window.scrollY / 800); 
       let langIndex = ((step % 3) + 3) % 3; 
 
