@@ -98,9 +98,6 @@ Vivo solo, en un departamento del cuarto piso de la calle Belgrano, en Buenos Ai
     const layers = [layerEn, layerEs, layerZh];
 
     window.addEventListener('scroll', () => {
-      // 注意：因为你目前放进去的文本比较短，我把这里的数字改成了 100。
-      // 意思是“每向下滚动 100 像素切换一次语言”。
-      // 等你把很长很长的全文都放进去之后，你可以把它改回 600 或 800。
       let step = Math.floor(window.scrollY / 100); 
       let langIndex = ((step % 3) + 3) % 3; 
 
